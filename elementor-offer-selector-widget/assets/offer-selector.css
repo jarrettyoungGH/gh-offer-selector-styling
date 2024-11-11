@@ -1,0 +1,771 @@
+/* *
+* 1. Global Styles
+* 2. Purchase Type
+* 3. Product Options
+* 4. Add to Cart Button
+* 5. Logged out message
+* 6. Logged in messages
+* 7. Responsive
+*/
+
+
+/* 1. Global */
+:root {
+    --rhp-primary: #443B32;
+    --rhp-lighter-secondary: #FB7C5E;
+    --rhp-secondary: #EE5531;
+    --rhp-darker-secondary: #BF4325;
+    --rhp-white: #ffffff;
+    --rhp-lightest-gray: #E3DFDA;
+    --rhp-lighter-gray: #D4D4D4;
+    --rhp-gray: #737373;
+    --rhp-lighter-blue: #B2E6F9;
+    --rhp-blue: #54C0E8;
+    --rhp-darker-blue: #064760;
+    --rhp-sand: #F6F2EE;
+    --rhp-desert: #DFD3C8;
+    --rhp-red: #9A2E14;
+}
+
+.ghm-hidden {
+    display: none;
+}
+
+.ghm-offer-selector {
+    font-family: inherit;
+}
+
+.ghm-offer-selector>* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* 2. Purchase Type */
+.ghm-offer-selector .purchase-type-options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto 20px auto;
+}
+
+.ghm-offer-selector .purchase-type-option {
+    width: 100%;
+}
+
+.ghm-offer-selector .purchase-type-option label {
+    width: 100%;
+}
+
+.ghm-offer-selector .purchase-type-option input[type="radio"] {
+    display: none;
+}
+
+.ghm-offer-selector .purchase-type-option input[type="radio"]+span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--rhp-primary);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    background: transparent;
+    border: 1px solid var(--rhp-primary);
+    border-radius: 8px;
+    padding: 10px 0px;
+    cursor: pointer;
+    box-shadow: 0;
+    -webkit-transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    -o-transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+}
+
+.ghm-offer-selector .purchase-type-option input[type="radio"]+span:hover,
+.ghm-offer-selector .purchase-type-option input[type="radio"]:checked+span {
+    background-color: var(--rhp-primary);
+    color: var(--rhp-white);
+    border: 1px solid var(--rhp-primary);
+}
+
+/* 3. Product Options */
+
+
+.ghm-offer-selector ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ghm-offer-selector ul li {
+    position: relative;
+}
+
+.ghm-offer-selector ul li label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 15px 15px;
+    cursor: pointer;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    -webkit-transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    -o-transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+}
+
+.ghm-offer-selector ul li label:hover {
+    border: 1px solid transparent;
+    background-color: var(--rhp-desert);
+    color: var(--rhp-primary);
+}
+
+.ghm-offer-selector ul li label.active,
+.ghm-offer-selector ul li label:has(input[type="radio"]:checked) {
+    border: 1px solid var(--rhp-primary);
+    background-color: var(--rhp-desert);
+}
+
+.ghm-offer-selector ul li label:hover .savings-message,
+.ghm-offer-selector ul li label.active .savings-message,
+.ghm-offer-selector ul li label:has(input[type=radio]:checked) .savings-message {}
+
+
+
+
+.ghm-offer-selector .product-options input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    border-width: var(--radio-border-width, 2px);
+    border-style: solid;
+    border-color: var(--radio-border-color, #ccc);
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    width: var(--radio-button-width, 30px);
+    height: var(--radio-button-height, 30px);
+    aspect-ratio: 1 / 1; /* Ensures perfect circular shape */
+    align-self: center;
+    box-sizing: border-box; /* Include border and padding inside dimensions */
+}
+
+
+.ghm-offer-selector .product-options input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(var(--radio-button-height, 30px) * 0.5);
+    height: calc(var(--radio-button-height, 30px) * 0.5);
+    background-color: var(--radio-selected-background-color, #000);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.ghm-offer-selector .pricing-container {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.ghm-offer-selector .product-details {
+    display: flex;
+    align-items: center; /* Ensure items are aligned to the center vertically */
+    justify-content: space-between; /* Keep the savings amount and regular price spaced apart */
+    gap: 10px; /* Optional: Add some space between the child elements */
+    margin: 0; /* Remove any default margins that could be interfering */
+    padding: 0; /* Ensure no extra padding affects the alignment */
+}
+
+
+.ghm-offer-selector .quantity-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.ghm-offer-selector .quantity-container.with-flags {
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+    grid-template-areas: "quantity badge flags price";
+}
+
+.ghm-offer-selector .quantity-container .quantity {
+    flex: 1;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--rhp-primary);
+    font-family: inherit;
+    justify-self: start;
+}
+
+
+.ghm-offer-selector .quantity-container .final-price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    color: var(--rhp-primary);
+    grid-area: price;
+}
+
+.ghm-offer-selector .savings-message {
+    color: inherit; /* Allow Elementor color control */
+    background-color: inherit; /* Allow Elementor background color control */
+    padding: inherit; /* Allow Elementor padding control */
+    margin: inherit; /* Allow Elementor margin control */
+    transition: background-color 0.3s, color 0.3s; /* Allow for hover state */
+}
+
+
+.ghm-offer-selector ul li label:hover .quantity,
+.ghm-offer-selector ul li label.active .quantity,
+.ghm-offer-selector ul li label:has(input[type="radio"]:checked) .quantity,
+.ghm-offer-selector ul li label:hover .final-price,
+.ghm-offer-selector ul li label.active .final-price,
+.ghm-offer-selector ul li label:has(input[type="radio"]:checked) .final-price {
+    color: var(--rhp-primary);
+}
+
+.ghm-offer-selector .badge {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: var(--rhp-lighter-blue);
+    color: var(--rhp-darker-blue);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    border-radius: 4px;
+    -webkit-transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    -o-transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    grid-area: badge;
+}
+
+.ghm-offer-selector .quantity-container .best-seller-flag,
+.ghm-offer-selector .quantity-container .best-value-flag {
+    width: 48px;
+    grid-area: flags;
+}
+
+/* 4. Add to Cart button */
+.ghm-offer-selector .button-container .add-to-cart {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 2.2;
+    margin: 20px 0 0 0;
+    color: var(--rhp-white);
+    background: var(--rhp-secondary);
+    border-radius: 0px;
+    -webkit-transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    -o-transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    outline: none;
+    text-transform: uppercase;
+}
+
+.ghm-offer-selector .button-container .disabled-btn {
+    background-color: var(--rhp-lighter-gray);
+    color: var(--rhp-gray);
+    pointer-events: none;
+}
+
+.ghm-offer-selector .button-container .add-to-cart:hover {
+    background-color: var(--rhp-darker-secondary);
+    color: var(--rhp-white);
+}
+
+.ghm-offer-selector .button-container .add-to-cart:focus {
+    outline: none;
+    border: none;
+}
+
+/* 5. Logged out message */
+.ghm-offer-selector .logged-out-message-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 7px;
+    margin: 20px 0 0 0;
+    text-align: center;
+    color: var(--rhp-darker-blue);
+    background-color: var(--rhp-lighter-blue);
+    padding: 20px 0;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.ghm-offer-selector .logged-out-message-container .message p {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.363px;
+}
+
+.ghm-offer-selector .logged-out-message-container .message p>span,
+.ghm-offer-selector .logged-out-message-container .message .saving-price {
+    font-weight: 500;
+}
+
+.ghm-offer-selector .logged-out-message-container .auth-links {
+	display: flex;
+	flex-direction: row;
+    justify-content: center;
+	align-items: baseline;
+	gap: 15px;
+}
+
+.ghm-offer-selector .logged-out-message-container .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.ghm-offer-selector .logged-out-message-container .links .link-as-btn {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    padding: 3px 7px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 4px;
+    border: 0px solid var(--rhp-secondary);
+    -webkit-transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    -o-transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: var(--rhp-darker-blue);
+    letter-spacing: 0.363px;
+}
+
+.ghm-offer-selector .logged-out-message-container .links .sign-up-link {
+    background-color: var(--rhp-darker-blue);
+    color: var(--rhp-white);
+    text-decoration: none;
+}
+
+.ghm-offer-selector .logged-out-message-container .links .sign-up-link:hover {
+    background-color: var(--rhp-primary);
+    border-color: var(--rhp-primary);
+}
+
+
+.ghm-offer-selector .logged-out-message-container .links .login-link {
+    color: var(--rhp-darker-blue);
+    padding: 0;
+}
+
+.ghm-offer-selector .logged-out-message-container .links .login-link:hover {}
+
+.ghm-offer-selector .logged-out-message-container .footer {
+    display: none !important;
+}
+
+.ghm-offer-selector .logged-out-message-container .footer p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.ghm-offer-selector .logged-out-message-container .footer p:first-child {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.ghm-offer-selector .disclaimer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /*background-color: var(--rhp-primary);*/
+    padding: 20px 0;
+    gap: 4px;
+}
+
+.ghm-offer-selector .disclaimer p {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.ghm-offer-selector .disclaimer span {
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--rhp-primary);
+    margin: 0;
+    padding: 0 10px;
+    display: block;
+    letter-spacing: 0.444px;
+}
+
+.ghm-offer-selector .disclaimer .guarantee {
+    font-weight: 400;
+}
+
+.ghm-offer-selector .disclaimer svg {
+    display: inline;
+}
+
+/* 6. Logged in messages */
+.ghm-offer-selector .logged-in-message {
+    text-align: center;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: var(--rhp-primary);
+    margin-bottom: 20px;
+}
+
+.ghm-offer-selector .subscribe-save-message-container {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.ghm-offer-selector .subscribe-save-message-container .logged-in-subscribe-save-header {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: var(--rhp-primary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.ghm-offer-selector .subscribe-save-message-container .logged-in-subscribe-save-message {
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 400;
+    color: var(--rhp-primary);
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid var(--rhp-primary);
+    border-radius: 8px;
+}
+
+.ghm-offer-selector .subscribe-save-message-container .logged-in-subscribe-save-message a {
+    color: var(--rhp-secondary);
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+.ghm-offer-selector .subscribe-save-message-container input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 24px;
+    width: 24px;
+    border: 2px solid var(--rhp-primary) !important;
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+    background-color: var(--rhp-white);
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.ghm-offer-selector .subscribe-save-message-container input[type="checkbox"]:checked {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjRUU1NTMxIiBkPSJNNDM4LjYgMTA1LjRjMTIuNSAxMi41IDEyLjUgMzIuOCAwIDQ1LjNsLTI1NiAyNTZjLTEyLjUgMTIuNS0zMi44IDEyLjUtNDUuMyAwbC0xMjgtMTI4Yy0xMi41LTEyLjUtMTIuNS0zMi44IDAtNDUuM3MzMi44LTEyLjUgNDUuMyAwTDE2MCAzMzguNyAzOTMuNCAxMDUuNGMxMi41LTEyLjUgMzIuOC0xMi41IDQ1LjMgMHoiLz48L3N2Zz4=");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ghm-offer-selector .subscribe-save-message-container label {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 700;
+    color: var(--rhp-primary);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* 7. Responsive */
+@media screen and (max-width: 1050px) {
+    .ghm-offer-selector .quantity-container.with-flags {
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-areas: "quantity price flags"
+            "badge badge flags";
+    }
+
+    .ghm-offer-selector .badge {
+        justify-self: start;
+    }
+
+    .ghm-offer-selector .quantity-container .best-seller-flag,
+    .ghm-offer-selector .quantity-container .best-value-flag {
+        top: 10px;
+        right: 10px;
+        position: absolute;
+    }
+}
+
+.ghm-offer-selector .variant-options {
+    margin-bottom: 24px;
+}
+
+.ghm-offer-selector .variant-options .variant-label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--rhp-primary);
+    margin-bottom: 8px;
+}
+
+.ghm-offer-selector .variant-options .variant-radio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.ghm-offer-selector .variant-options .variant-radio .variant-option {
+    flex: 1;
+}
+
+.ghm-offer-selector .variant-options .variant-radio .variant-option label {
+    width: 100%;
+}
+
+.ghm-offer-selector .variant-option input[type=radio] {
+    display: none;
+}
+
+.ghm-offer-selector .variant-option input[type=radio]+span {
+    display: block;
+    color: var(--rhp-primary);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid var(--rhp-primary);
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.ghm-offer-selector .variant-option input[type=radio]:checked+span {
+    border-color: var(--rhp-primary);
+    background-color: var(--rhp-primary);
+    color: var(--rhp-white);
+}
+
+.notify-me-container .out-of-stock-message {
+    text-transform: uppercase;
+    color: var(--rhp-secondary);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 450px) {
+    .ghm-offer-selector .quantity-container {}
+
+    .ghm-offer-selector .purchase-type-options {
+        flex-direction: column;
+    }
+
+    .ghm-offer-selector .badge {
+        font-size: 14px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ghm-offer-selector .quantity-container .quantity {
+        font-size: 18px;
+    }
+
+    .ghm-offer-selector .quantity-container .final-price {
+        font-size: 18px;
+    }
+
+    .ghm-offer-selector .logged-out-message-container .links {
+        gap: 4px;
+    }
+
+    .ghm-offer-selector .logged-out-message-container .links .link-as-btn {
+        font-size: 14px;
+    }
+
+    .ghm-offer-selector .quantity-container .best-seller-flag,
+    .ghm-offer-selector .quantity-container .best-value-flag {
+        width: 46px;
+    }
+
+    .ghm-offer-selector .button-container .add-to-cart {
+        font-size: 18px;
+    }
+}
+
+.product-option {
+	display: flex;
+	cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.product-option {
+    border: 1px solid #ccc; /* Default border color */
+}
+
+.product-option.selected {
+    background-color: #f0f0f0; /* Set the background color when selected */
+    border-color: #000; /* Set the border color when selected */
+}
+
+
+.product-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.product-info,
+.pricing-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Default border for unselected radio buttons */
+input[type="radio"] {
+    accent-color: #000; /* Change color of the radio button */
+}
+
+/* If the accent-color property is not working as expected for your use case, use this */
+input[type="radio"]:not(:checked) {
+    border: 2px solid #000; /* Default border color for unselected state */
+}
+
+/* Radio button when selected */
+input[type="radio"]:checked {
+    border: 2px solid #000; /* Border color for selected radio button */
+}
+
+.product-option {
+    display: flex;
+    flex-direction: row; /* Arrange radio button and product label side by side */
+    gap: 15px; /* Adjust gap as needed */
+    cursor: pointer; /* Add pointer to indicate clickability */
+}
+
+.product-label {
+    flex-grow: 1; /* Take remaining space next to the radio button */
+    display: flex;
+    flex-direction: column; /* Arrange product info container vertically */
+}
+
+.product-info-container {
+    display: flex;
+    flex-direction: column; /* Arrange product details and member price vertically */
+}
+
+.pricing-info {
+	display: flex;
+	flex-direction: row;
+}
